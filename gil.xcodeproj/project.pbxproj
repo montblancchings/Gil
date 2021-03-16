@@ -20,6 +20,7 @@
 		81350FDE25FE10BD00480918 /* TMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81350FD525FE0EA000480918 /* TMapSDK.framework */; };
 		81350FDF25FE10BD00480918 /* TMapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81350FD525FE0EA000480918 /* TMapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81350FE425FE18F200480918 /* TMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81350FE325FE18F200480918 /* TMapManager.swift */; };
+		81B3EC7D26012C4400F9E763 /* CoordinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3EC7C26012C4400F9E763 /* CoordinateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		81350F6D25FDFD3200480918 /* GilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilViewController.swift; sourceTree = "<group>"; };
 		81350FD525FE0EA000480918 /* TMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TMapSDK.framework; sourceTree = "<group>"; };
 		81350FE325FE18F200480918 /* TMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMapManager.swift; sourceTree = "<group>"; };
+		81B3EC7C26012C4400F9E763 /* CoordinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		81350F2525FC607400480918 /* gil */ = {
 			isa = PBXGroup;
 			children = (
+				81B3EC7B26012C1B00F9E763 /* Navigation */,
 				81350F6925FD981300480918 /* ViewController */,
 				81350F5D25FD7A3D00480918 /* API */,
 				81350F2625FC607400480918 /* AppDelegate.swift */,
@@ -139,6 +142,14 @@
 				81350FE325FE18F200480918 /* TMapManager.swift */,
 			);
 			path = TMap;
+			sourceTree = "<group>";
+		};
+		81B3EC7B26012C1B00F9E763 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				81B3EC7C26012C4400F9E763 /* CoordinateManager.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B3EC7D26012C4400F9E763 /* CoordinateManager.swift in Sources */,
 				81350F6B25FD982400480918 /* SearchViewController.swift in Sources */,
 				81350FE425FE18F200480918 /* TMapManager.swift in Sources */,
 				81350F6325FD7A8800480918 /* Network.swift in Sources */,

@@ -12,7 +12,7 @@ import TMapSDK
  장소 검색 이후, 검색된 결과를 선택하여, 이벤트를 생성하는 ViewController.
  - Date: 20210314
  */
-class SearchViewController: UIViewController{
+class SearchViewController: GilViewController{
     /**
      입력 상태
      - Date: 20210314
@@ -113,9 +113,16 @@ class SearchViewController: UIViewController{
     @IBAction func textFieldEditting(_ sender: Any) {
         let manager = TMapManager()
         guard let text = self.searchTextField.text else {return}
-        manager.requestAutoComplete(keyword: text) { (result) in
-            let result = result ?? []
-            self.searchResultKeywords = result
+//        manager.requestAutoComplete(keyword: text) { (result) in
+//            let result = result ?? []
+//            self.searchResultKeywords = result
+//        }
+        
+        manager.requestAroundSearch(keywoard: text){ [weak self] _items in
+            guard let self = self else {return}
+            
+            let items = _items?.map{ $0.name ?? "" } ?? []
+            self.searchResultKeywords = items
         }
     }
 }
@@ -137,9 +144,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(self.searchResultKeywords[indexPath.row])")
-        
-        let manager = TMapManager()
-        manager.requestPathData()
+        let keyword = self.searchResultKeywords[indexPath.row]
+        print("selected : \(keyword)")
     }
 }
